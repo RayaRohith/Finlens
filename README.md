@@ -1,4 +1,4 @@
-# FinLens — Finance Dashboard UI
+# FinLens - Finance Dashboard UI
 
 A clean, interactive finance dashboard built as part of a frontend internship assignment. Allows users to track financial activity, explore transactions, and understand spending patterns through visualizations.
 
@@ -6,11 +6,11 @@ A clean, interactive finance dashboard built as part of a frontend internship as
 
 ## Tech Stack
 
-- **React 18** — component-based UI
-- **Vite** — build tool and dev server
-- **Tailwind CSS** — utility-first styling
-- **Recharts** — charting library (line, bar, donut)
-- **Zustand** — lightweight state management with localStorage persistence
+- **React 18** - component-based UI
+- **Vite** - build tool and dev server
+- **Tailwind CSS** - utility-first styling
+- **Recharts** - charting library (line, bar, donut)
+- **Zustand** - lightweight state management with localStorage persistence
 
 ---
 
@@ -37,8 +37,8 @@ A clean, interactive finance dashboard built as part of a frontend internship as
 - Auto-generated observations from the data
 
 ### Role-Based UI
-- **Viewer** — read-only access
-- **Admin** — can add new transactions and delete existing ones
+- **Viewer** - read-only access
+- **Admin** - can add new transactions and delete existing ones
 - Role switcher in the sidebar (no login required, frontend simulation)
 
 ### Optional Enhancements Implemented
@@ -101,10 +101,10 @@ src/
 
 ## Design Decisions
 
-- **Zustand over Context/Redux** — simple API, minimal boilerplate, and built-in persistence support made it the right fit for this scale
-- **Static mock data + mock API layer** — separating the data source from the store mirrors how a real API integration would work, making it straightforward to swap in a real endpoint
-- **Role simulation on the frontend** — as specified in the brief, no backend auth; roles are stored in state and control which UI elements are rendered
-- **Dark theme** — chosen for a finance dashboard context where users may spend extended time reviewing data
+- **Zustand over Context/Redux** - I went with Zustand because it's straightforward to set up and the built-in persist middleware handled localStorage without any extra wiring. For a project at this scale it felt like the right call.
+- **Mock API layer** - Instead of importing the data directly into the store, I kept a separate api.js that simulates a real network request with a delay. That way swapping in a real endpoint later is just a one-line change.
+- **Role simulation on the frontend** - Roles are stored in state and control what the UI renders. No auth logic, just enough to demonstrate the viewer/admin difference as the brief asked for.
+- **Dark theme** - Finance dashboards tend to be something people stare at for a while, so a dark UI felt like the more comfortable choice over a bright one.
 
 ---
 
